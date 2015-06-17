@@ -1,0 +1,15 @@
+all: [puid,city,district_id,price,huxing_shi,tab_system,zhuangxiu,street_id,major_category,ceng,chaoxiang,image_count,fang_xing,xiaoqu_id,huxing_ting,huxing_wei,peizhi,area,agent]
+scatter: [huxing_shi,zhuangxiu,major_category,huxing_ting,huxing_wei,l2_price,d_area,agent]
+split: [tab_system]
+convert_real_log:  
+  price: l2_price
+
+convert_real_div:
+  area: d_area
+
+combo: 
+  - [district_id,street_id]
+
+constants:
+  base_of_log: !!float 2
+  divider: !!float 20

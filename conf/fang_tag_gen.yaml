@@ -1,0 +1,21 @@
+all: [puid,city,district_id,price,huxing_shi,tab_system,zhuangxiu,street_id,major_category,ceng,chaoxiang,image_count,fang_xing,xiaoqu_id,huxing_ting,huxing_wei,peizhi,area,agent,type,house_type]
+scatter: [city,huxing_shi,zhuangxiu,major_category,huxing_ting,huxing_wei,l2_price,d_area,xiaoqu_id,agent,district_id,street_id,house_type]
+split: [tab_system]
+convert:
+  type: major_category
+
+convert_real_log:  
+  price: l2_price
+
+convert_real_div:
+  area: d_area
+
+combo: 
+  - [city,major_category,district_id,street_id,l2_price]
+  - [district_id,street_id]
+  - [major_category,district_id,street_id]
+  - [major_category,l2_price]
+
+constants:
+  base_of_log: !!float 2
+  divider: !!float 20
